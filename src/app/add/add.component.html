@@ -1,0 +1,23 @@
+<p>add works!</p>
+<form #simple_add="ngForm">
+<div class="col-sm-12 text-centre" id ="bo">
+
+Name: <input type='text' placeholder="name" ngModel name="usrname" #usrname="ngModel" required><br><br>
+<div class="alrt_red" *ngIf="usrname.errors?.required">Username required</div>
+Age: <input type="number" placeholder="age" ngModel name="usrage" #usrage="ngModel" required  ><br><br>
+<div class="alrt_red" *ngIf="usrage.errors?.required">AGE required</div>
+
+Color: <select name="usrcolor" ngModel >
+    
+    <option value="black">black</option>
+    <option value="red">red</option>
+    <option value="yellow">yellow</option>
+    <option value="green">green</option>
+</select><br><br>
+gender: <input type="radio" value="female" name="usrgender" ngModel>female<input type="radio" value="male" ngModel name="usrgender">male
+
+</div><br><br>
+<div class="col-sm-12">
+    <button class="btn btn-primary" value="add" (click)="dataservice.add_user(simple_add.value);simple_add.reset()">add</button>
+</div>
+</form>

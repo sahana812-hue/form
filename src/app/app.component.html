@@ -1,0 +1,28 @@
+<nav class="navbar navbar-default">
+  <div class="navbar-fluid">
+    <div class="navbar-header">
+      <a routerLink=""class="navbar-brand">HOME</a>
+      <a routerLink="/list" class="navbar-brand">LIST</a>
+      <a routerLink="/add" class="navbar-brand">ADDLIST</a>
+      
+    </div>
+  </div>
+</nav>
+<h2>Fetching data from API</h2>
+<div class="col-sm-12 font_s" >
+  <table border="1px solid" >
+    <tr>
+     <th class ="pad_colm" *ngFor="let head of header">{{head}}</th>
+    </tr> 
+    <tr *ngFor="let test of api_data;">
+      <td class ="pad_colm">{{test.name}} </td>
+      <td class ="pad_colm">{{test.position}} </td>
+      <td class ="pad_colm">{{test.salary}} </td>
+    </tr>
+  </table>
+
+</div>
+
+
+
+<router-outlet></router-outlet>
